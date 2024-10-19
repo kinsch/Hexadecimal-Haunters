@@ -1,13 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dsdlfl532d0jr"]
-
-[ext_resource type="Texture2D" uid="uid://bjq5scd6np3h6" path="res://Assets/Witches/temp_witch.png" id="1_313in"]
+[gd_scene format=3 uid="uid://dsdlfl532d0jr"]
 
 [node name="Node2D" type="Node2D"]
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-7.62939e-06, 229)
-scale = Vector2(3.35, 3.39474)
-texture = ExtResource("1_313in")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
