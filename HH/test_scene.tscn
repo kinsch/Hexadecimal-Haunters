@@ -1,6 +1,13 @@
-[gd_scene format=3 uid="uid://dsdlfl532d0jr"]
+[gd_scene load_steps=2 format=3 uid="uid://dsdlfl532d0jr"]
+
+[ext_resource type="Texture2D" uid="uid://bjq5scd6np3h6" path="res://Assets/Witches/temp_witch.png" id="1_313in"]
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-7.62939e-06, 229)
+scale = Vector2(3.35, 3.39474)
+texture = ExtResource("1_313in")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -8,9 +15,19 @@
 offset_right = 1150.0
 offset_bottom = 648.0
 
-[node name="TextEdit" type="TextEdit" parent="CanvasLayer"]
-offset_left = 35.0
-offset_top = 17.0
-offset_right = 416.0
-offset_bottom = 82.0
-text = "TEST"
+[node name="ScoreText" type="TextEdit" parent="CanvasLayer"]
+offset_left = 28.0
+offset_top = 20.0
+offset_right = 117.0
+offset_bottom = 62.0
+text = "Score:"
+
+[node name="Score" type="TextEdit" parent="CanvasLayer/ScoreText"]
+layout_mode = 0
+offset_left = 52.0
+offset_top = 2.0
+offset_right = 90.0
+offset_bottom = 31.0
+text = "XXX"
+
+[node name="Camera2D" type="Camera2D" parent="."]
