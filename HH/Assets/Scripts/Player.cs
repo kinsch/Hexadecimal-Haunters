@@ -11,7 +11,7 @@ public partial class Player : CharacterBody2D
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _PhysicsProcess(double delta) {
-		Vector2 vel = Veclocity;
+		Vector2 vel = Velocity;
 		//horizontal movment
 		vel.X = 0;
 		if (Input.IsKeyPressed(Key.Left)) {
@@ -19,5 +19,8 @@ public partial class Player : CharacterBody2D
 		} else if (Input.IsKeyPressed(Key.Right)) {
 			vel.X = moveSpeed;
 		}
+		
+		Velocity = vel;
+		MoveAndSlide();
 	}
 }

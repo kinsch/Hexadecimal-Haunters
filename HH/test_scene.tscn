@@ -29,3 +29,4 @@ text = "XXX"
 
 [node name="Node2D" parent="." instance=ExtResource("1_sy6kh")]
 position = Vector2(0, 7)
+metadata/moveSpeed = 150.0
