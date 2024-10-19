@@ -23,10 +23,10 @@ texture = ExtResource("2_my4t1")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 456.0
-offset_top = 395.0
-offset_right = 556.0
-offset_bottom = 435.0
+offset_left = 461.0
+offset_top = 419.0
+offset_right = 561.0
+offset_bottom = 449.0
 scale = Vector2(2.23919, 5.07351)
 alignment = 1
 
@@ -46,10 +46,10 @@ layout_mode = 2
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 519.0
-offset_top = 406.0
-offset_right = 559.0
-offset_bottom = 415.0
+offset_left = 515.0
+offset_top = 401.0
+offset_right = 555.0
+offset_bottom = 410.0
 scale = Vector2(2.5282, 5.99499)
 
 [node name="Play" type="Button" parent="VBoxContainer3"]
