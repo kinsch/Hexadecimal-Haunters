@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://co8h0q0yyqed1"]
 
-[ext_resource type="Script" path="res://how_to_play_menu.gd" id="1_yufqm"]
+[ext_resource type="Script" path="res://Assets/Scripts/how_to_play_menu.gd" id="1_yufqm"]
 
 [node name="HowToPlayMenu" type="Control"]
 layout_mode = 3
@@ -17,16 +17,15 @@ script = ExtResource("1_yufqm")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
-offset_left = 252.0
-offset_top = 503.0
-offset_right = 297.0
-offset_bottom = 546.0
+offset_left = -207.0
+offset_top = -137.0
+offset_right = -162.0
+offset_bottom = -94.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
 
 [node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "back"
-
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Button" to="." method="_on_button_pressed"]
+text = "Back
+"
