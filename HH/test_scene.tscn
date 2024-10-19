@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://dsdlfl532d0jr"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="Panel" parent="CanvasLayer"]
+offset_right = 1150.0
+offset_bottom = 648.0
+
+[node name="TextEdit" type="TextEdit" parent="CanvasLayer"]
+offset_left = 35.0
+offset_top = 17.0
+offset_right = 416.0
+offset_bottom = 82.0
+text = "TEST"
