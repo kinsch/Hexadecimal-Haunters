@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dplihuvifk0nu"]
+
+[ext_resource type="Texture2D" uid="uid://bjq5scd6np3h6" path="res://Assets/Witches/temp_witch.png" id="1_k3hwo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k4mlb"]
+size = Vector2(74, 118)
+
+[node name="Node2D" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_k4mlb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3.35, 3.02632)
+texture = ExtResource("1_k3hwo")
