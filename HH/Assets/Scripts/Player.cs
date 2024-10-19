@@ -3,15 +3,21 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-	public float moveSpeed = 1f; 
+	public float moveSpeed = 150f; 
 	// Called when the node enters the scene tree for the first time.
-	public override void _Ready(){
+	public override void _Ready() {
 		
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-		
+	public override void _PhysicsProcess(double delta) {
+		Vector2 vel = Veclocity;
+		//horizontal movment
+		vel.X = 0;
+		if (Input.IsKeyPressed(Key.Left)) {
+			vel.X = -moveSpeed;
+		} else if (Input.IsKeyPressed(Key.Right)) {
+			vel.X = moveSpeed;
+		}
 	}
 }

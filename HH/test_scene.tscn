@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dsdlfl532d0jr"]
+[gd_scene load_steps=2 format=3 uid="uid://dsdlfl532d0jr"]
+
+[ext_resource type="PackedScene" uid="uid://dplihuvifk0nu" path="res://player.tscn" id="1_sy6kh"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -24,3 +26,6 @@ offset_bottom = 31.0
 text = "XXX"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Node2D" parent="." instance=ExtResource("1_sy6kh")]
+position = Vector2(0, 7)
