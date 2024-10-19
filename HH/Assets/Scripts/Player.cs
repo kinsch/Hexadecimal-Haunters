@@ -22,7 +22,6 @@ public partial class Player : CharacterBody2D
 		
 		Velocity = vel;
 		MoveAndSlide();
-		//GD.Print(GetSlideCollisonCount());
 		for (int i = 0; i < GetSlideCollisionCount(); i++){
 				var collision = GetSlideCollision(i);
 				GD.Print("I collided with ", ((Node)collision.GetCollider()).Name);
