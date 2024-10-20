@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://wlj7m07tqfk1"]
+[gd_scene load_steps=14 format=3 uid="uid://wlj7m07tqfk1"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.cs" id="1_e6jxn"]
 [ext_resource type="PackedScene" uid="uid://dplihuvifk0nu" path="res://Scenes/player.tscn" id="1_gtmvl"]
@@ -6,9 +6,10 @@
 [ext_resource type="Script" path="res://Scripts/FallObjectSpawner.cs" id="3_7ssus"]
 [ext_resource type="PackedScene" uid="uid://dymb8pv2t13li" path="res://Scenes/broomstick.tscn" id="3_q8464"]
 [ext_resource type="PackedScene" uid="uid://dsbrp4dp3ycx" path="res://Scenes/nail.tscn" id="4_cbaom"]
-[ext_resource type="PackedScene" uid="uid://fnqrvkioedia" path="res://Scenes/Tooth.tscn" id="4_xo7tb"]
+[ext_resource type="PackedScene" uid="uid://cei6e1xkpho72" path="res://Scenes/Tooth.tscn" id="4_xo7tb"]
 [ext_resource type="Texture2D" uid="uid://d0bslqekmjpxq" path="res://SceneBackgroundArt/Catch teeth and broomsticks,.png" id="5_bv0fk"]
 [ext_resource type="Script" path="res://Scripts/DespawnDetector.cs" id="8_gaams"]
+[ext_resource type="AudioStream" uid="uid://bbj632jos5yuy" path="res://sounds/in-game.mp3" id="9_dbqpp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mu1u8"]
 size = Vector2(20, 646)
@@ -99,3 +100,9 @@ script = ExtResource("8_gaams")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DespawnArea"]
 position = Vector2(0, 364)
 shape = SubResource("RectangleShape2D_b41ih")
+
+[node name="in-game-audio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_dbqpp")
+volume_db = -24.36
+pitch_scale = 1.49
+autoplay = true
