@@ -7,6 +7,8 @@
 size = Vector2(74, 118)
 
 [node name="Node2D" type="CharacterBody2D"]
+disable_mode = 1
+motion_mode = 1
 script = ExtResource("1_kkxky")
 metadata/moveSpeed = 0.0
 
