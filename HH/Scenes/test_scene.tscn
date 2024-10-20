@@ -1,10 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://wlj7m07tqfk1"]
+[gd_scene load_steps=10 format=3 uid="uid://wlj7m07tqfk1"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.cs" id="1_e6jxn"]
 [ext_resource type="PackedScene" uid="uid://dplihuvifk0nu" path="res://Scenes/player.tscn" id="1_gtmvl"]
 [ext_resource type="Script" path="res://Scripts/EdgeDetection.cs" id="2_vmfmo"]
 [ext_resource type="Script" path="res://Scripts/FallObjectSpawner.cs" id="3_7ssus"]
+[ext_resource type="PackedScene" uid="uid://dymb8pv2t13li" path="res://Scenes/broomstick.tscn" id="3_q8464"]
 [ext_resource type="PackedScene" uid="uid://dsbrp4dp3ycx" path="res://Scenes/nail.tscn" id="4_cbaom"]
+[ext_resource type="PackedScene" path="res://Scenes/Tooth.tscn" id="4_xo7tb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mu1u8"]
 size = Vector2(20, 646)
@@ -12,11 +14,15 @@ size = Vector2(20, 646)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4iwlr"]
 size = Vector2(1149, 136)
 
-[node name="WorldNode" type="Node2D" node_paths=PackedStringArray("PlayerNode", "FOS", "TimeLabel")]
+[node name="WorldNode" type="Node2D" node_paths=PackedStringArray("PlayerNode", "FOS", "TimeLabel", "ScoreLabel")]
 script = ExtResource("1_e6jxn")
 PlayerNode = NodePath("Node2D")
 FOS = NodePath("FallObjectSpawnArea")
 TimeLabel = NodePath("CanvasLayer/Panel/Time")
+ScoreLabel = NodePath("CanvasLayer/Panel/Label/Score")
+NailObjScene = ExtResource("4_cbaom")
+BroomObjScene = ExtResource("3_q8464")
+ToothObjScene = ExtResource("4_xo7tb")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -70,7 +76,6 @@ shape = SubResource("RectangleShape2D_mu1u8")
 
 [node name="FallObjectSpawnArea" type="Area2D" parent="."]
 script = ExtResource("3_7ssus")
-objScene = ExtResource("4_cbaom")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FallObjectSpawnArea"]
 position = Vector2(-2, -399)

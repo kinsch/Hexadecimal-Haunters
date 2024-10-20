@@ -8,6 +8,10 @@ public partial class GameManager : Node
 	[Export] private Label TimeLabel;
 	[Export] private Label ScoreLabel;
 	
+	[Export] private PackedScene NailObjScene;
+	[Export] private PackedScene BroomObjScene;
+	[Export] private PackedScene ToothObjScene;
+	
 	[Export] private float SpawnInterval = 1f;
 	private float timerStartValue = 10f;
 	
@@ -16,7 +20,7 @@ public partial class GameManager : Node
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		FOS.OnObjectSpawn();
+		FOS.OnObjectSpawn(ToothObjScene);
 		
 		//Setup and start Timer
 		spawnTimer = new Timer();
@@ -44,7 +48,7 @@ public partial class GameManager : Node
 	}
 
 	private void CallObjectSpawn() {
-		FOS.OnObjectSpawn();
+		FOS.OnObjectSpawn(ToothObjScene);
 		spawnTimer.WaitTime = SpawnInterval;
 		spawnTimer.Start();
 	}

@@ -3,7 +3,7 @@ using System;
 
 public partial class FallObjectSpawner : Area2D
 {
-	[Export] private PackedScene objScene;
+	//[Export] private PackedScene objScene;
 	private Rect2 spawnerArea;
 	
 	private RandomNumberGenerator rng = new RandomNumberGenerator();
@@ -23,9 +23,9 @@ public partial class FallObjectSpawner : Area2D
 	}
 	
 	//Spawn a single Instance at a random position within 2d area
-	public void OnObjectSpawn() {
-		if (objScene != null) {
-			Node2D newObj = (Node2D)objScene.Instantiate();
+	public void OnObjectSpawn(PackedScene curObj) {
+		if (curObj != null) {
+			Node2D newObj = (Node2D)curObj.Instantiate();
 			
 			//gen random position from this 2d area
 			Vector2 randPosition = new Vector2(
@@ -34,9 +34,9 @@ public partial class FallObjectSpawner : Area2D
 			
 			newObj.Position = randPosition;
 			AddChild(newObj);
-			GD.Print("FOS.cs: Objects Spawned!"+newObj.Position.X);
+			//GD.Print("FOS.cs: Objects Spawned!"+newObj.Position.X);
 		} else {
-			GD.Print("FallObjectSpawner.cs: Not a valid object 'scene'!");
+			GD.Print("FallObjectSpawner.cs: Not a valid packedscene!");
 		}
 	}
 

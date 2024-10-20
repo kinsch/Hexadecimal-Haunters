@@ -42,7 +42,7 @@ public partial class Player : CharacterBody2D
 			Position = curPosition + new Vector2(5, 0);
 		}
 		
-		GD.Print("Position: "+curPosition.Y);
+		//GD.Print("Position: "+curPosition.Y);
 	}
 	
 	public void CollisionCheck(Node body) {

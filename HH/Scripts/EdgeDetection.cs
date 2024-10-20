@@ -12,7 +12,7 @@ public partial class EdgeDetection : Area2D
 
 	private void PlayerDetection(Node body) {
 		if (body is Player player) {
-			GD.Print("Player Detected!");
+			//GD.Print("Player Detected!");
 			
 			player.EdgeWrap();
 		}
