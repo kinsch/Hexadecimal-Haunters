@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://co8h0q0yyqed1"]
 
 [ext_resource type="Script" path="res://Scripts/how_to_play_menu.gd" id="1_yufqm"]
-[ext_resource type="Texture2D" uid="uid://d1sr7r101jmpx" path="res://SceneBackgroundArt/HOW TO PLAY (1).png" id="2_lsnrc"]
+[ext_resource type="Texture2D" uid="uid://cikpky15jlaqq" path="res://SceneBackgroundArt/HOW TO PLAY (2).png" id="2_d1mor"]
 
 [node name="HowToPlayMenu" type="Control"]
 layout_mode = 3
@@ -27,7 +27,7 @@ offset_right = -262.0
 offset_bottom = -168.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_lsnrc")
+texture = ExtResource("2_d1mor")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 0
