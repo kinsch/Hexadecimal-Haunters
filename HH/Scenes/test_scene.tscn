@@ -12,10 +12,11 @@ size = Vector2(20, 646)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4iwlr"]
 size = Vector2(1149, 136)
 
-[node name="WorldNode" type="Node2D" node_paths=PackedStringArray("PlayerNode", "FOS")]
+[node name="WorldNode" type="Node2D" node_paths=PackedStringArray("PlayerNode", "FOS", "TimeLabel")]
 script = ExtResource("1_e6jxn")
 PlayerNode = NodePath("Node2D")
 FOS = NodePath("FallObjectSpawnArea")
+TimeLabel = NodePath("CanvasLayer/Panel/Time")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -38,6 +39,14 @@ offset_top = 2.0
 offset_right = 90.0
 offset_bottom = 25.0
 text = "000"
+
+[node name="Time" type="Label" parent="CanvasLayer/Panel"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 42.0
+offset_right = 58.0
+offset_bottom = 65.0
+text = "00:00"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
