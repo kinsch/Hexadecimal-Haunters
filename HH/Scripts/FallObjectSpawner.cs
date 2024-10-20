@@ -3,17 +3,31 @@ using System;
 
 public partial class FallObjectSpawner : Area2D
 {
-	private Area2D spawnerArea;
-	[Export] PackedScene objScene;
+	[Export] private PackedScene objScene;
+	
+	
+	private Rect2 spawnerArea;
+	
+	private RandomNumberGenerator rng = new RandomNumberGenerator();
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		spawnerArea = this;
+		rng.Randomize();
+		
+		//Get rect from this area
+		foreach(Node child in GetChildren()) {
+			if (child is CollisionShape2D collisionShape) {
+				spawnerArea = collisionShape.Shape.GetRect();
+			}
+		}
+		
+		OnObjectSpawn();
 	}
 	
+	//Spawn a single Instance at a random position within 2d area
 	void OnObjectSpawn() {
 		if (objScene != null) {
-			Node2D newObj = (Node2D)objScene.Instance();
+			Node2D newObj = (Node2D)objScene.Instantiate();
 			
 			//gen random position from this 2d area
 			Vector2 randPosition = new Vector2(
@@ -23,7 +37,7 @@ public partial class FallObjectSpawner : Area2D
 			
 			newObj.Position = randPosition;
 		} else {
-			GD.Print("FallObjectSpawner.cs: Not a valid object 'scene'!")
+			GD.Print("FallObjectSpawner.cs: Not a valid object 'scene'!");
 		}
 	}
 
