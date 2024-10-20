@@ -7,8 +7,10 @@ public partial class Player : CharacterBody2D
 	[Export] public int Health = 3; //3 lives before gameover
 	[Export] public int Score = 0;
 	[Export] private Label ScoreLabel;
+	[Export] private Label LifeLabel;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
+		LifeLabel.Text = Health.ToString();
 		foreach(Node child in GetChildren()) {
 			if (child is Area2D area) {
 				area.BodyEntered += CollisionCheck;
@@ -51,12 +53,14 @@ public partial class Player : CharacterBody2D
 	public void CollisionCheck(Node body) {
 		//check if nail, tooth, etc...
 		if (body.IsInGroup("Nail")) {
-			
 			Health--;
 			GD.Print("CurrentHealth= "+Health);
 			//update health value UI
+			LifeLabel.Text = Health.ToString();
 		} else if (body.IsInGroup("Collect")) {
-			Score += 50;
+			//Score can be anywhere from 250-300
+			RandomNumberGenerator rng = new RandomNumberGenerator();
+			Score += (int)rng.RandfRange(250, 300);
 			ScoreLabel.Text = Score.ToString();
 			body.QueueFree();
 		}

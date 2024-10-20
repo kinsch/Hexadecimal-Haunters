@@ -51,19 +51,19 @@ offset_right = 208.0
 offset_bottom = 49.0
 text = "000"
 
-[node name="Time" type="Label" parent="CanvasLayer"]
-offset_left = 563.0
-offset_top = 12.0
-offset_right = 604.0
-offset_bottom = 35.0
-text = "00:00"
-
 [node name="Lives" type="Label" parent="CanvasLayer"]
 offset_left = 140.0
 offset_top = 111.0
 offset_right = 180.0
 offset_bottom = 134.0
 text = "0"
+
+[node name="Time" type="Label" parent="CanvasLayer"]
+offset_left = 563.0
+offset_top = 12.0
+offset_right = 604.0
+offset_bottom = 35.0
+text = "00:00"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
