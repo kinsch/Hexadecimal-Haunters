@@ -6,7 +6,6 @@ public partial class GameManager : Node
 	[Export] private Player PlayerNode;
 	[Export] private FallObjectSpawner FOS; 
 	[Export] private Label TimeLabel;
-	[Export] private Label ScoreLabel;
 	
 	[Export] private PackedScene NailObjScene;
 	[Export] private PackedScene BroomObjScene;

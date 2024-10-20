@@ -18,12 +18,11 @@ size = Vector2(1149, 136)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b41ih"]
 size = Vector2(1151, 20)
 
-[node name="WorldNode" type="Node2D" node_paths=PackedStringArray("PlayerNode", "FOS", "TimeLabel", "ScoreLabel")]
+[node name="WorldNode" type="Node2D" node_paths=PackedStringArray("PlayerNode", "FOS", "TimeLabel")]
 script = ExtResource("1_e6jxn")
 PlayerNode = NodePath("Node2D")
 FOS = NodePath("FallObjectSpawnArea")
 TimeLabel = NodePath("CanvasLayer/Panel/Time")
-ScoreLabel = NodePath("CanvasLayer/Panel/Label/Score")
 NailObjScene = ExtResource("4_cbaom")
 BroomObjScene = ExtResource("3_q8464")
 ToothObjScene = ExtResource("4_xo7tb")
@@ -60,8 +59,9 @@ text = "00:00"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Node2D" parent="." instance=ExtResource("1_gtmvl")]
+[node name="Node2D" parent="." node_paths=PackedStringArray("ScoreLabel") instance=ExtResource("1_gtmvl")]
 position = Vector2(0, 230)
+ScoreLabel = NodePath("../CanvasLayer/Panel/Label/Score")
 
 [node name="RT_EdgeCollider" type="Area2D" parent="."]
 position = Vector2(586, 0)

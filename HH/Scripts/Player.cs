@@ -5,6 +5,8 @@ public partial class Player : CharacterBody2D
 {
 	[Export] public float MoveSpeed = 250f; 
 	[Export] public int Health = 3; //3 lives before gameover
+	[Export] public int Score = 0;
+	[Export] private Label ScoreLabel;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
 		foreach(Node child in GetChildren()) {
@@ -28,6 +30,7 @@ public partial class Player : CharacterBody2D
 		}
 		
 		Velocity = vel;
+		Position = new Vector2(Position.X, 230f);
 		MoveAndSlide();
 		
 	}
@@ -48,9 +51,14 @@ public partial class Player : CharacterBody2D
 	public void CollisionCheck(Node body) {
 		//check if nail, tooth, etc...
 		if (body.IsInGroup("Nail")) {
+			
 			Health--;
 			GD.Print("CurrentHealth= "+Health);
 			//update health value UI
+		} else if (body.IsInGroup("Collect")) {
+			Score += 50;
+			ScoreLabel.Text = Score.ToString();
+			body.QueueFree();
 		}
 	}
 }
