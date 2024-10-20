@@ -19,11 +19,11 @@ public partial class FallObjectSpawner : Area2D
 			}
 		}
 		
-		OnObjectSpawn();
+		//OnObjectSpawn();
 	}
 	
 	//Spawn a single Instance at a random position within 2d area
-	void OnObjectSpawn() {
+	public void OnObjectSpawn() {
 		if (objScene != null) {
 			Node2D newObj = (Node2D)objScene.Instantiate();
 			
@@ -33,7 +33,7 @@ public partial class FallObjectSpawner : Area2D
 				rng.RandfRange(spawnerArea.Position.Y, spawnerArea.Position.Y + spawnerArea.Size.Y)
 			);
 			
-			newObj.Position = new Vector2(0,0);
+			newObj.Position = randPosition;
 			AddChild(newObj);
 			GD.Print("FOS.cs: Objects Spawned!"+newObj.Position.X);
 		} else {

@@ -3,7 +3,7 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-	public float moveSpeed = 250f; 
+	[Export] public float MoveSpeed = 250f; 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
 		
@@ -15,9 +15,9 @@ public partial class Player : CharacterBody2D
 		//horizontal movment
 		vel.X = 0;
 		if (Input.IsKeyPressed(Key.Left)) {
-			vel.X = -moveSpeed;
+			vel.X = -MoveSpeed;
 		} else if (Input.IsKeyPressed(Key.Right)) {
-			vel.X = moveSpeed;
+			vel.X = MoveSpeed;
 		}
 		
 		Velocity = vel;

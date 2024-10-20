@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://wlj7m07tqfk1"]
+[gd_scene load_steps=8 format=3 uid="uid://wlj7m07tqfk1"]
 
+[ext_resource type="Script" path="res://Scripts/GameManager.cs" id="1_e6jxn"]
 [ext_resource type="PackedScene" uid="uid://dplihuvifk0nu" path="res://Scenes/player.tscn" id="1_gtmvl"]
 [ext_resource type="Script" path="res://Scripts/EdgeDetection.cs" id="2_vmfmo"]
 [ext_resource type="Script" path="res://Scripts/FallObjectSpawner.cs" id="3_7ssus"]
@@ -11,7 +12,9 @@ size = Vector2(20, 646)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4iwlr"]
 size = Vector2(1149, 136)
 
-[node name="WorldNode" type="Node2D"]
+[node name="WorldNode" type="Node2D" node_paths=PackedStringArray("FOS")]
+script = ExtResource("1_e6jxn")
+FOS = NodePath("FallObjectSpawnArea")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
