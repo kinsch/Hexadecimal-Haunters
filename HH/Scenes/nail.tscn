@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bcrqhh24pwoup"]
 
-[ext_resource type="Texture2D" uid="uid://po4mtgp8jiwm" path="res://Assets/rustednail.png" id="1_b2tqh"]
+[ext_resource type="Texture2D" uid="uid://0uodv8r76rtm" path="res://Assets/rustednail.png" id="1_b2tqh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ehywn"]
 animations = [{
