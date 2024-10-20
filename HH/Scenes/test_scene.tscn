@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://wlj7m07tqfk1"]
+[gd_scene load_steps=13 format=3 uid="uid://wlj7m07tqfk1"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.cs" id="1_e6jxn"]
 [ext_resource type="PackedScene" uid="uid://dplihuvifk0nu" path="res://Scenes/player.tscn" id="1_gtmvl"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dymb8pv2t13li" path="res://Scenes/broomstick.tscn" id="3_q8464"]
 [ext_resource type="PackedScene" uid="uid://dsbrp4dp3ycx" path="res://Scenes/nail.tscn" id="4_cbaom"]
 [ext_resource type="PackedScene" uid="uid://fnqrvkioedia" path="res://Scenes/Tooth.tscn" id="4_xo7tb"]
+[ext_resource type="Texture2D" uid="uid://d0bslqekmjpxq" path="res://SceneBackgroundArt/Catch teeth and broomsticks,.png" id="5_bv0fk"]
 [ext_resource type="Script" path="res://Scripts/DespawnDetector.cs" id="8_gaams"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mu1u8"]
@@ -22,46 +23,54 @@ size = Vector2(1151, 20)
 script = ExtResource("1_e6jxn")
 PlayerNode = NodePath("Node2D")
 FOS = NodePath("FallObjectSpawnArea")
-TimeLabel = NodePath("CanvasLayer/Panel/Time")
+TimeLabel = NodePath("CanvasLayer/Time")
 NailObjScene = ExtResource("4_cbaom")
 BroomObjScene = ExtResource("3_q8464")
 ToothObjScene = ExtResource("4_xo7tb")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_bv0fk")
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="Panel" type="Panel" parent="CanvasLayer"]
-offset_right = 1150.0
-offset_bottom = 648.0
-
-[node name="Label" type="Label" parent="CanvasLayer/Panel"]
-layout_mode = 0
-offset_left = 15.0
-offset_top = 12.0
-offset_right = 63.0
-offset_bottom = 35.0
-text = "Score:"
-
-[node name="Score" type="Label" parent="CanvasLayer/Panel/Label"]
-layout_mode = 0
-offset_left = 50.0
-offset_top = 2.0
-offset_right = 90.0
-offset_bottom = 25.0
+[node name="Score" type="Label" parent="CanvasLayer"]
+offset_left = 168.0
+offset_top = 26.0
+offset_right = 208.0
+offset_bottom = 49.0
 text = "000"
 
-[node name="Time" type="Label" parent="CanvasLayer/Panel"]
-layout_mode = 0
-offset_left = 17.0
-offset_top = 42.0
-offset_right = 58.0
-offset_bottom = 65.0
+[node name="Time" type="Label" parent="CanvasLayer"]
+offset_left = 563.0
+offset_top = 12.0
+offset_right = 604.0
+offset_bottom = 35.0
 text = "00:00"
+
+[node name="Lives" type="Label" parent="CanvasLayer"]
+offset_left = 140.0
+offset_top = 111.0
+offset_right = 180.0
+offset_bottom = 134.0
+text = "0"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Node2D" parent="." node_paths=PackedStringArray("ScoreLabel") instance=ExtResource("1_gtmvl")]
+[node name="Node2D" parent="." node_paths=PackedStringArray("ScoreLabel", "LifeLabel") instance=ExtResource("1_gtmvl")]
 position = Vector2(0, 230)
-ScoreLabel = NodePath("../CanvasLayer/Panel/Label/Score")
+ScoreLabel = NodePath("../CanvasLayer/Score")
+LifeLabel = NodePath("../CanvasLayer/Lives")
 
 [node name="RT_EdgeCollider" type="Area2D" parent="."]
 position = Vector2(586, 0)
