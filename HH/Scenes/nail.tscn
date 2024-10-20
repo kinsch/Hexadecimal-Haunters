@@ -13,11 +13,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f3tku"]
-radius = 11.2409
-height = 159.007
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8lgg2"]
+radius = 23.9613
+height = 170.166
 
 [node name="Nail" type="RigidBody2D" groups=["Nail"]]
+position = Vector2(-1, 1)
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -26,8 +27,7 @@ sprite_frames = SubResource("SpriteFrames_ehywn")
 animation = &"nail"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(5, -9)
-rotation = -0.741571
-shape = SubResource("CapsuleShape2D_f3tku")
+rotation = -0.888373
+shape = SubResource("CapsuleShape2D_8lgg2")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

@@ -3,6 +3,7 @@ using System;
 
 public partial class GameManager : Node
 {
+	[Export] private Player PlayerNode;
 	[Export] private FallObjectSpawner FOS; 
 	[Export] private float SpawnInterval = 1f;
 	
@@ -21,6 +22,13 @@ public partial class GameManager : Node
 		
 		
 		//FOS.OnObjectSpawn();
+	}
+	
+	public override void _Process(double delta) {
+		if (PlayerNode.Health < 1) {
+			//GAME OVER
+			GetTree().ChangeSceneToFile("res://Scenes/death.tscn");
+		}
 	}
 
 	private void CallObjectSpawn() {
