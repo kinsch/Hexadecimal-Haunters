@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://djggy8xv3b6v6"]
 
 [ext_resource type="Texture2D" uid="uid://dgj611pliqkwj" path="res://SceneBackgroundArt/win.png" id="1_2p01f"]
-[ext_resource type="Script" path="res://Scenes/win.gd" id="1_2vs4k"]
+[ext_resource type="Script" path="res://Scripts/win.gd" id="1_2vs4k"]
 
 [node name="win" type="Control"]
 layout_mode = 3

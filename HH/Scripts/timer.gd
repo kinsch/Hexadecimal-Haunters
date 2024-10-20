@@ -1,7 +1,16 @@
 extends Node2D
 
-func _ready():
-	$Timer.start()
+@onready var label = $Label
+@onready var timer = $Timer 
 
-func _on_timer_timeout() -> void:
-	print("Timer Stop")
+func _ready():
+		timer.start()
+
+func time_left_to_live():
+	var time_left = timer.time_left
+	var minute = (time_left / 60)
+	var second = int(time_left) % 60
+	return [minute, second]
+	
+func _process(delta):
+	label.text = "%02d:%02d" % time_left_to_live()
