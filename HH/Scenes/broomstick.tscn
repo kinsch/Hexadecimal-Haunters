@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://cb1puqyiwwcyo"]
+
+[ext_resource type="Texture2D" uid="uid://ba15l6i3vhna2" path="res://Assets/broomstick.png" id="1_8hrsy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jqngt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8hrsy")
+}],
+"loop": true,
+"name": &"broomstick",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8m560"]
+radius = 215.0
+height = 430.0
+
+[node name="Broomstick" type="RigidBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_jqngt")
+animation = &"broomstick"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-95, 8)
+shape = SubResource("CapsuleShape2D_8m560")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
