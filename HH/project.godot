@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 <<<<<<<HEADrun/main_scene="res://Scenes/main_menu.tscn"
 
+[autoload]
+
+Beforegame="*res://Scenes/beforegame.tscn"
+
 [display]
 
 window/stretch/mode="canvas_items"
