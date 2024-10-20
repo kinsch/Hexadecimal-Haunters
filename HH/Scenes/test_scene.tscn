@@ -1,9 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://wlj7m07tqfk1"]
+[gd_scene load_steps=5 format=3 uid="uid://wlj7m07tqfk1"]
 
 [ext_resource type="PackedScene" uid="uid://dplihuvifk0nu" path="res://Scenes/player.tscn" id="1_gtmvl"]
 [ext_resource type="Texture2D" uid="uid://d0bslqekmjpxq" path="res://SceneBackgroundArt/Catch teeth and broomsticks,.png" id="1_ibg4p"]
-[ext_resource type="Script" path="res://Scripts/EdgeDetection.cs" id="2_vmfmo"]
-[ext_resource type="Script" path="res://Scripts/FallObjectSpawner.cs" id="3_7ssus"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mu1u8"]
 size = Vector2(20, 646)
@@ -46,24 +44,22 @@ text = "000"
 
 [node name="Node2D" parent="." instance=ExtResource("1_gtmvl")]
 position = Vector2(0, 230)
+script = null
 metadata/moveSpeed = 200.0
 
 [node name="RT_EdgeCollider" type="Area2D" parent="."]
 position = Vector2(586, 0)
-script = ExtResource("2_vmfmo")
 
 [node name="Collider" type="CollisionShape2D" parent="RT_EdgeCollider"]
 shape = SubResource("RectangleShape2D_mu1u8")
 
 [node name="LT_EdgeCollider" type="Area2D" parent="."]
 position = Vector2(-586, 0)
-script = ExtResource("2_vmfmo")
 
 [node name="Collider" type="CollisionShape2D" parent="LT_EdgeCollider"]
 shape = SubResource("RectangleShape2D_mu1u8")
 
 [node name="FallObjectSpawnArea" type="Area2D" parent="."]
-script = ExtResource("3_7ssus")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FallObjectSpawnArea"]
 position = Vector2(0, -391)

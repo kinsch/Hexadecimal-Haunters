@@ -1,58 +1,84 @@
-[gd_scene load_steps=8 format=3 uid="uid://cei6e1xkpho72"]
+[gd_scene load_steps=10 format=3 uid="uid://cei6e1xkpho72"]
 
-[ext_resource type="Texture2D" uid="uid://b04seaa6tn2ke" path="res://Assets/dodge_the_creeps_2d_assets/art/enemyFlyingAlt_1.png" id="1_x8nag"]
-[ext_resource type="Texture2D" uid="uid://dmq17pq2n4r8m" path="res://Assets/dodge_the_creeps_2d_assets/art/enemyFlyingAlt_2.png" id="2_fyw17"]
-[ext_resource type="Texture2D" uid="uid://ba34m4xhnqpfp" path="res://Assets/dodge_the_creeps_2d_assets/art/enemySwimming_1.png" id="3_rvaqi"]
-[ext_resource type="Texture2D" uid="uid://cgu1eatkudun1" path="res://Assets/dodge_the_creeps_2d_assets/art/enemySwimming_2.png" id="4_ubc6e"]
-[ext_resource type="Texture2D" uid="uid://bhu1byqbuccr0" path="res://Assets/dodge_the_creeps_2d_assets/art/enemyWalking_1.png" id="5_h6uln"]
-[ext_resource type="Texture2D" uid="uid://d4jrxvq1ovys6" path="res://Assets/dodge_the_creeps_2d_assets/art/enemyWalking_2.png" id="6_ids2v"]
+[ext_resource type="Texture2D" uid="uid://bth2135cne6ur" path="res://Assets/tooth-and-blood.png" id="1_o43ug"]
+[ext_resource type="Texture2D" uid="uid://ba15l6i3vhna2" path="res://Assets/broomstick.png" id="2_5auup"]
+[ext_resource type="Texture2D" uid="uid://po4mtgp8jiwm" path="res://Assets/rustednail.png" id="3_s52wy"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xh2y7"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_x8nag")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_fyw17")
+"texture": ExtResource("1_o43ug")
 }],
 "loop": true,
-"name": &"fly",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_rvaqi")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_ubc6e")
-}],
-"loop": true,
-"name": &"swim",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("5_h6uln")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_ids2v")
-}],
-"loop": true,
-"name": &"walk",
+"name": &"tooth",
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4hlfp"]
+radius = 94.0
+height = 246.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kist3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5auup")
+}],
+"loop": true,
+"name": &"broomstick",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i8b7s"]
+radius = 138.0
+height = 530.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lwjed"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_s52wy")
+}],
+"loop": true,
+"name": &"nail",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ddlxb"]
+radius = 164.0
+height = 334.0
+
 [node name="Mob" type="RigidBody2D"]
+position = Vector2(226, 336)
 collision_mask = 0
 gravity_scale = 0.0
 metadata/_edit_group_ = true
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="Tooth" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_xh2y7")
-animation = &"walk"
-frame_progress = 0.474279
+animation = &"tooth"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Tooth_Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_4hlfp")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Broomstick" type="AnimatedSprite2D" parent="."]
+position = Vector2(500, 0)
+rotation = -0.380482
+sprite_frames = SubResource("SpriteFrames_kist3")
+animation = &"broomstick"
+
+[node name="Broomstick_Collision" type="CollisionShape2D" parent="."]
+position = Vector2(500, 0)
+shape = SubResource("CapsuleShape2D_i8b7s")
+
+[node name="Nail" type="AnimatedSprite2D" parent="."]
+position = Vector2(1000, 10)
+sprite_frames = SubResource("SpriteFrames_lwjed")
+animation = &"nail"
+
+[node name="Nail_Collision" type="CollisionShape2D" parent="."]
+position = Vector2(1000, 0)
+shape = SubResource("CapsuleShape2D_ddlxb")
