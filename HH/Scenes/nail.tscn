@@ -18,10 +18,10 @@ radius = 164.0
 height = 378.0
 
 [node name="Nail" type="RigidBody2D"]
-scale = Vector2(0.2, 0.2)
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_ehywn")
 animation = &"nail"
 
