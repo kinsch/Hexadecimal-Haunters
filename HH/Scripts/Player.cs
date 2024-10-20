@@ -3,7 +3,7 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-	public float moveSpeed = 150f; 
+	public float moveSpeed = 250f; 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
 		
@@ -35,6 +35,6 @@ public partial class Player : CharacterBody2D
 			Position = curPosition + new Vector2(5, 0);
 		}
 		
-		GD.Print("Position: "+curPosition.X);
+		GD.Print("Position: "+curPosition.Y);
 	}
 }
