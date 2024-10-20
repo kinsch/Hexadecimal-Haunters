@@ -19,6 +19,12 @@ public partial class Player : CharacterBody2D
 		
 		
 	}
+	
+	public override void _Process(double delta) {
+		if (Score >= 1000) {
+			GetTree().ChangeSceneToFile("res://Scenes/win.tscn");
+		}
+	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _PhysicsProcess(double delta) {
@@ -58,9 +64,7 @@ public partial class Player : CharacterBody2D
 			//update health value UI
 			LifeLabel.Text = Health.ToString();
 		} else if (body.IsInGroup("Collect")) {
-			//Score can be anywhere from 250-300
-			RandomNumberGenerator rng = new RandomNumberGenerator();
-			Score += (int)rng.RandfRange(250, 300);
+			Score += 100;
 			ScoreLabel.Text = Score.ToString();
 			body.QueueFree();
 		}
