@@ -55,10 +55,9 @@ script = ExtResource("2_vmfmo")
 [node name="Collider" type="CollisionShape2D" parent="LT_EdgeCollider"]
 shape = SubResource("RectangleShape2D_mu1u8")
 
-[node name="FallObjectSpawnArea" type="Area2D" parent="." node_paths=PackedStringArray("WorldNode")]
+[node name="FallObjectSpawnArea" type="Area2D" parent="."]
 script = ExtResource("3_7ssus")
 objScene = ExtResource("4_cbaom")
-WorldNode = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FallObjectSpawnArea"]
 position = Vector2(0, -390)

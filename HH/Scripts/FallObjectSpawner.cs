@@ -4,10 +4,7 @@ using System;
 public partial class FallObjectSpawner : Area2D
 {
 	[Export] private PackedScene objScene;
-	
-	
 	private Rect2 spawnerArea;
-	[Export] public Node WorldNode;
 	
 	private RandomNumberGenerator rng = new RandomNumberGenerator();
 	// Called when the node enters the scene tree for the first time.
