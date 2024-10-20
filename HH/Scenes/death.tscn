@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cm8ax4ed4goe5"]
+[gd_scene load_steps=3 format=3 uid="uid://cm8ax4ed4goe5"]
 
 [ext_resource type="Texture2D" uid="uid://dj230ouf4bob" path="res://SceneBackgroundArt/GAME OVER.png" id="1_fyd2a"]
+[ext_resource type="Script" path="res://Scripts/death.gd" id="1_qfoyu"]
 
 [node name="Death" type="Control"]
 layout_mode = 3
@@ -9,9 +10,35 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qfoyu")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_fyd2a")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = 299.0
+offset_top = 577.0
+offset_right = 339.0
+offset_bottom = 585.0
+scale = Vector2(3.28389, 5.40107)
+
+[node name="TryAgain" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 784.0
+offset_top = 582.0
+offset_right = 804.0
+offset_bottom = 594.0
+scale = Vector2(4.3278, 4.45559)
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer2/TryAgain" to="." method="_on_try_again_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
