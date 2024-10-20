@@ -33,12 +33,19 @@ text = "000"
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="Node2D" parent="." instance=ExtResource("1_gtmvl")]
-position = Vector2(0, 164)
+position = Vector2(0, 230)
 metadata/moveSpeed = 200.0
 
 [node name="RT_EdgeCollider" type="Area2D" parent="."]
-position = Vector2(585, 0)
+position = Vector2(586, 0)
 script = ExtResource("2_vmfmo")
 
 [node name="Collider" type="CollisionShape2D" parent="RT_EdgeCollider"]
+shape = SubResource("RectangleShape2D_mu1u8")
+
+[node name="LT_EdgeCollider" type="Area2D" parent="."]
+position = Vector2(-586, 0)
+script = ExtResource("2_vmfmo")
+
+[node name="Collider" type="CollisionShape2D" parent="LT_EdgeCollider"]
 shape = SubResource("RectangleShape2D_mu1u8")
