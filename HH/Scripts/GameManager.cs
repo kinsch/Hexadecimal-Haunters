@@ -11,16 +11,18 @@ public partial class GameManager : Node
 	[Export] private PackedScene NailObjScene;
 	[Export] private PackedScene BroomObjScene;
 	[Export] private PackedScene ToothObjScene;
+	private PackedScene curFallObj;
 	
 	[Export] private float SpawnInterval = 1f;
-	private float timerStartValue = 10f;
+	private float timerStartValue = 60f;
 	
 	private Timer spawnTimer;
 	private Timer gameTimer;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		FOS.OnObjectSpawn(ToothObjScene);
+		curFallObj = ToothObjScene;
+		FOS.OnObjectSpawn(curFallObj);
 		
 		//Setup and start Timer
 		spawnTimer = new Timer();
@@ -45,10 +47,25 @@ public partial class GameManager : Node
 			//GAME OVER
 			GetTree().ChangeSceneToFile("res://Scenes/death.tscn");
 		}
+		
+		//time checks
+		if (gameTimer.TimeLeft < 50f && gameTimer.TimeLeft > 40f) {
+			//swap to nails
+			curFallObj = NailObjScene;
+		}
+		else if (gameTimer.TimeLeft > 30f && gameTimer.TimeLeft < 40f) {
+			curFallObj = BroomObjScene;
+		}
+		else if (gameTimer.TimeLeft > 25f && gameTimer.TimeLeft < 30f) {
+			curFallObj = NailObjScene;
+		}
+		else if (gameTimer.TimeLeft > 15f && gameTimer.TimeLeft < 25f) {
+			curFallObj = ToothObjScene;
+		}
 	}
 
 	private void CallObjectSpawn() {
-		FOS.OnObjectSpawn(ToothObjScene);
+		FOS.OnObjectSpawn(curFallObj);
 		spawnTimer.WaitTime = SpawnInterval;
 		spawnTimer.Start();
 	}
