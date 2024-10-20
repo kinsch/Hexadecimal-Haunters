@@ -24,4 +24,11 @@ public partial class Player : CharacterBody2D
 		MoveAndSlide();
 		
 	}
+	
+	public void EdgeWrap() {
+		Vector2 curPosition = Position;
+		curPosition.X = -curPosition.X;
+		Position = curPosition;
+		GD.Print("Position: "+curPosition.X);
+	}
 }

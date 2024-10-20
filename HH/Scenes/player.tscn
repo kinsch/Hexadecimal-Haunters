@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://bjq5scd6np3h6" path="res://Assets/Witches/temp_witch.png" id="1_k3hwo"]
 [ext_resource type="Script" path="res://Scripts/Player.cs" id="1_kkxky"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4mlb"]
 size = Vector2(74, 118)
 
