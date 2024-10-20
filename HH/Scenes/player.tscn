@@ -13,6 +13,7 @@ size = Vector2(44, 111)
 disable_mode = 1
 motion_mode = 1
 script = ExtResource("1_kkxky")
+MoveSpeed = 300.0
 metadata/moveSpeed = 0.0
 
 [node name="Area2D" type="Area2D" parent="."]
