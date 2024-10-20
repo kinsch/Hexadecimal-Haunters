@@ -11,7 +11,7 @@ size = Vector2(20, 646)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4iwlr"]
 size = Vector2(1149, 136)
 
-[node name="Node2D" type="Node2D"]
+[node name="WorldNode" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -55,9 +55,10 @@ script = ExtResource("2_vmfmo")
 [node name="Collider" type="CollisionShape2D" parent="LT_EdgeCollider"]
 shape = SubResource("RectangleShape2D_mu1u8")
 
-[node name="FallObjectSpawnArea" type="Area2D" parent="."]
+[node name="FallObjectSpawnArea" type="Area2D" parent="." node_paths=PackedStringArray("WorldNode")]
 script = ExtResource("3_7ssus")
 objScene = ExtResource("4_cbaom")
+WorldNode = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FallObjectSpawnArea"]
 position = Vector2(0, -390)

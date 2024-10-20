@@ -7,6 +7,7 @@ public partial class FallObjectSpawner : Area2D
 	
 	
 	private Rect2 spawnerArea;
+	[Export] public Node WorldNode;
 	
 	private RandomNumberGenerator rng = new RandomNumberGenerator();
 	// Called when the node enters the scene tree for the first time.
@@ -36,6 +37,7 @@ public partial class FallObjectSpawner : Area2D
 			);
 			
 			newObj.Position = new Vector2(0,0);
+			AddChild(newObj);
 			GD.Print("FOS.cs: Objects Spawned!"+newObj.Position.X);
 		} else {
 			GD.Print("FallObjectSpawner.cs: Not a valid object 'scene'!");
