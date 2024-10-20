@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://dplihuvifk0nu" path="res://Scenes/player.tscn" id="1_gtmvl"]
 [ext_resource type="Script" path="res://Scripts/EdgeDetection.cs" id="2_vmfmo"]
 [ext_resource type="Script" path="res://Scripts/FallObjectSpawner.cs" id="3_7ssus"]
-[ext_resource type="PackedScene" uid="uid://dymb8pv2t13li" path="res://Scenes/broomstick.tscn" id="3_q8464"]
+[ext_resource type="PackedScene" uid="uid://cb1puqyiwwcyo" path="res://Scenes/broomstick.tscn" id="3_q8464"]
 [ext_resource type="PackedScene" uid="uid://dsbrp4dp3ycx" path="res://Scenes/nail.tscn" id="4_cbaom"]
-[ext_resource type="PackedScene" uid="uid://fnqrvkioedia" path="res://Scenes/Tooth.tscn" id="4_xo7tb"]
+[ext_resource type="PackedScene" uid="uid://cei6e1xkpho72" path="res://Scenes/Tooth.tscn" id="4_xo7tb"]
 [ext_resource type="Texture2D" uid="uid://d0bslqekmjpxq" path="res://SceneBackgroundArt/Catch teeth and broomsticks,.png" id="5_bv0fk"]
 [ext_resource type="Script" path="res://Scripts/DespawnDetector.cs" id="8_gaams"]
 
@@ -45,17 +45,19 @@ texture = ExtResource("5_bv0fk")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Score" type="Label" parent="CanvasLayer"]
-offset_left = 168.0
-offset_top = 26.0
-offset_right = 208.0
-offset_bottom = 49.0
+offset_left = 167.0
+offset_top = 12.0
+offset_right = 224.0
+offset_bottom = 58.0
+theme_override_font_sizes/font_size = 33
 text = "000"
 
 [node name="Lives" type="Label" parent="CanvasLayer"]
-offset_left = 140.0
-offset_top = 111.0
-offset_right = 180.0
-offset_bottom = 134.0
+offset_left = 141.0
+offset_top = 97.0
+offset_right = 181.0
+offset_bottom = 143.0
+theme_override_font_sizes/font_size = 33
 text = "0"
 
 [node name="Time" type="Label" parent="CanvasLayer"]
