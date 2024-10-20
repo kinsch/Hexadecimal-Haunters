@@ -35,7 +35,8 @@ public partial class FallObjectSpawner : Area2D
 				rng.RandfRange(spawnerArea.Position.Y, spawnerArea.Position.Y + spawnerArea.Size.Y)
 			);
 			
-			newObj.Position = randPosition;
+			newObj.Position = new Vector2(0,0);
+			GD.Print("FOS.cs: Objects Spawned!"+newObj.Position.X);
 		} else {
 			GD.Print("FallObjectSpawner.cs: Not a valid object 'scene'!");
 		}
