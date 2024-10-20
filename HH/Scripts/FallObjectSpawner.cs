@@ -30,8 +30,7 @@ public partial class FallObjectSpawner : Area2D
 			//gen random position from this 2d area
 			Vector2 randPosition = new Vector2(
 				rng.RandfRange(spawnerArea.Position.X, spawnerArea.Position.X + spawnerArea.Size.X),
-				rng.RandfRange(spawnerArea.Position.Y, spawnerArea.Position.Y + spawnerArea.Size.Y)
-			);
+				-400);
 			
 			newObj.Position = randPosition;
 			AddChild(newObj);

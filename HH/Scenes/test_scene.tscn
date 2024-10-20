@@ -63,5 +63,5 @@ script = ExtResource("3_7ssus")
 objScene = ExtResource("4_cbaom")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FallObjectSpawnArea"]
-position = Vector2(0, -390)
+position = Vector2(-2, -399)
 shape = SubResource("RectangleShape2D_4iwlr")
