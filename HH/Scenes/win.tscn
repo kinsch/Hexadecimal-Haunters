@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://djggy8xv3b6v6"]
+
+[ext_resource type="Texture2D" uid="uid://dgj611pliqkwj" path="res://SceneBackgroundArt/win.png" id="1_2p01f"]
+
+[node name="win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2p01f")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+offset_left = 299.0
+offset_top = 577.0
+offset_right = 339.0
+offset_bottom = 585.0
+scale = Vector2(3.28389, 5.40107)
+
+[node name="TryAgain" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 784.0
+offset_top = 582.0
+offset_right = 804.0
+offset_bottom = 594.0
+scale = Vector2(4.3278, 4.45559)
+
+[node name="Quit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
