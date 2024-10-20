@@ -14,10 +14,11 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8m560"]
-radius = 215.0
-height = 430.0
+radius = 17.8636
+height = 232.0
 
 [node name="Broomstick" type="RigidBody2D"]
+position = Vector2(5, 1)
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -26,7 +27,8 @@ sprite_frames = SubResource("SpriteFrames_jqngt")
 animation = &"broomstick"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-95, 8)
+position = Vector2(-3.99998, -3.00001)
+rotation = 0.905003
 shape = SubResource("CapsuleShape2D_8m560")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]

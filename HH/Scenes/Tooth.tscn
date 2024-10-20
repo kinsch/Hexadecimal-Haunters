@@ -14,8 +14,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0l4v1"]
-radius = 92.0
-height = 236.0
+radius = 39.0
+height = 94.0
 
 [node name="Tooth" type="RigidBody2D"]
 collision_mask = 0

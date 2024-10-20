@@ -4,8 +4,15 @@ using System;
 public partial class Player : CharacterBody2D
 {
 	[Export] public float MoveSpeed = 250f; 
+	[Export] public int Health = 3; //3 lives before gameover
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready() {
+		foreach(Node child in GetChildren()) {
+			if (child is Area2D area) {
+				area.BodyEntered += CollisionCheck;
+			}
+		}
+		
 		
 	}
 
@@ -36,5 +43,14 @@ public partial class Player : CharacterBody2D
 		}
 		
 		GD.Print("Position: "+curPosition.Y);
+	}
+	
+	public void CollisionCheck(Node body) {
+		//check if nail, tooth, etc...
+		if (body.IsInGroup("Nail")) {
+			Health--;
+			GD.Print("CurrentHealth= "+Health);
+			//update health value UI
+		}
 	}
 }
