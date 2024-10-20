@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://baljd2ifnhgxs"]
+
+[ext_resource type="AudioStream" uid="uid://c5fubvv46h02b" path="res://sounds/before-game.mp3" id="1_wghmb"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_wghmb")
+volume_db = -22.486
+autoplay = true
