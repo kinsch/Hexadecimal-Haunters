@@ -18,10 +18,10 @@ radius = 215.0
 height = 430.0
 
 [node name="Broomstick" type="RigidBody2D"]
-scale = Vector2(0.3, 0.3)
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_jqngt")
 animation = &"broomstick"
 
