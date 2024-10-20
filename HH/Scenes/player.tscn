@@ -12,7 +12,9 @@ motion_mode = 1
 script = ExtResource("1_kkxky")
 metadata/moveSpeed = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(2, 1)
 shape = SubResource("RectangleShape2D_k4mlb")
 

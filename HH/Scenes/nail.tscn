@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcrqhh24pwoup"]
+[gd_scene load_steps=4 format=3 uid="uid://dsbrp4dp3ycx"]
 
 [ext_resource type="Texture2D" uid="uid://0uodv8r76rtm" path="res://Assets/rustednail.png" id="1_b2tqh"]
 
@@ -17,7 +17,7 @@ animations = [{
 radius = 164.0
 height = 378.0
 
-[node name="Nail" type="RigidBody2D"]
+[node name="Nail" type="RigidBody2D" groups=["Nail"]]
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
