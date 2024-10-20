@@ -62,7 +62,6 @@ text = "00:00"
 
 [node name="Node2D" parent="." instance=ExtResource("1_gtmvl")]
 position = Vector2(0, 230)
-metadata/moveSpeed = 200.0
 
 [node name="RT_EdgeCollider" type="Area2D" parent="."]
 position = Vector2(586, 0)
@@ -89,5 +88,5 @@ shape = SubResource("RectangleShape2D_4iwlr")
 script = ExtResource("8_gaams")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DespawnArea"]
-position = Vector2(0, 339)
+position = Vector2(0, 364)
 shape = SubResource("RectangleShape2D_b41ih")
