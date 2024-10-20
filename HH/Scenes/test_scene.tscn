@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://wlj7m07tqfk1"]
+[gd_scene load_steps=12 format=3 uid="uid://wlj7m07tqfk1"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.cs" id="1_e6jxn"]
 [ext_resource type="PackedScene" uid="uid://dplihuvifk0nu" path="res://Scenes/player.tscn" id="1_gtmvl"]
@@ -6,13 +6,17 @@
 [ext_resource type="Script" path="res://Scripts/FallObjectSpawner.cs" id="3_7ssus"]
 [ext_resource type="PackedScene" uid="uid://dymb8pv2t13li" path="res://Scenes/broomstick.tscn" id="3_q8464"]
 [ext_resource type="PackedScene" uid="uid://dsbrp4dp3ycx" path="res://Scenes/nail.tscn" id="4_cbaom"]
-[ext_resource type="PackedScene" path="res://Scenes/Tooth.tscn" id="4_xo7tb"]
+[ext_resource type="PackedScene" uid="uid://fnqrvkioedia" path="res://Scenes/Tooth.tscn" id="4_xo7tb"]
+[ext_resource type="Script" path="res://Scripts/DespawnDetector.cs" id="8_gaams"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mu1u8"]
 size = Vector2(20, 646)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4iwlr"]
 size = Vector2(1149, 136)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b41ih"]
+size = Vector2(1151, 20)
 
 [node name="WorldNode" type="Node2D" node_paths=PackedStringArray("PlayerNode", "FOS", "TimeLabel", "ScoreLabel")]
 script = ExtResource("1_e6jxn")
@@ -80,3 +84,10 @@ script = ExtResource("3_7ssus")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FallObjectSpawnArea"]
 position = Vector2(-2, -399)
 shape = SubResource("RectangleShape2D_4iwlr")
+
+[node name="DespawnArea" type="Area2D" parent="."]
+script = ExtResource("8_gaams")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DespawnArea"]
+position = Vector2(0, 339)
+shape = SubResource("RectangleShape2D_b41ih")

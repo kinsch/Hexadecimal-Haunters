@@ -23,3 +23,9 @@ window/stretch/mode="canvas_items"
 [dotnet]
 
 project/assembly_name="HH"
+
+[global_group]
+
+Collect="For Falling collectables"
+FallObject="This node is a fall object"
+Nail="is this node a nail?"

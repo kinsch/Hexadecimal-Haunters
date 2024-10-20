@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://cei6e1xkpho72"]
+[gd_scene load_steps=4 format=3 uid="uid://fnqrvkioedia"]
 
 [ext_resource type="Texture2D" uid="uid://dbbf3d0kukudy" path="res://Assets/tooth-and-blood.png" id="1_w4g1s"]
 
@@ -17,9 +17,8 @@ animations = [{
 radius = 39.0
 height = 94.0
 
-[node name="Tooth" type="RigidBody2D"]
+[node name="Tooth" type="RigidBody2D" groups=["Collect", "FallObject"]]
 collision_mask = 0
-gravity_scale = 0.0
 metadata/_edit_group_ = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

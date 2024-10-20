@@ -17,7 +17,7 @@ animations = [{
 radius = 23.9613
 height = 170.166
 
-[node name="Nail" type="RigidBody2D" groups=["Nail"]]
+[node name="Nail" type="RigidBody2D" groups=["FallObject", "Nail"]]
 position = Vector2(-1, 1)
 metadata/_edit_group_ = true
 
