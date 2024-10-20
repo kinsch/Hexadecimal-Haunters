@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cm8ax4ed4goe5"]
+[gd_scene load_steps=4 format=3 uid="uid://cm8ax4ed4goe5"]
 
 [ext_resource type="Texture2D" uid="uid://dj230ouf4bob" path="res://SceneBackgroundArt/GAME OVER.png" id="1_fyd2a"]
 [ext_resource type="Script" path="res://Scripts/death.gd" id="1_qfoyu"]
+[ext_resource type="AudioStream" uid="uid://55nx43rjgl26" path="res://sounds/losescreen.mp3" id="3_y4ntp"]
 
 [node name="Death" type="Control"]
 layout_mode = 3
@@ -39,6 +40,12 @@ scale = Vector2(4.3278, 4.45559)
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
+
+[node name="lose-screen" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_y4ntp")
+volume_db = -21.549
+pitch_scale = 0.96
+autoplay = true
 
 [connection signal="pressed" from="VBoxContainer2/TryAgain" to="." method="_on_try_again_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]
